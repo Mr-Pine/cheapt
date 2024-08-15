@@ -27,6 +27,8 @@ jobs:
             gh pr close ${{ github.event.pull_request.number }}
           fi
 
+      - name: Setup tmate session
+        uses: mxschmitt/action-tmate@v3
       - name: Check commit messages
         env:
           GH_TOKEN: ${{ github.token }}
